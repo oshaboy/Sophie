@@ -1,0 +1,31 @@
+Spec for the Sophie esoteric programming language
+This is a Finite State Machine equivalent language.
+It's name is the Hebrew word for finite.
+
+
+[] - loop until break
+* - break loop
+. - output accumultor as number
+: - input number to accumulator
+, - output accumulator as char
+; - input char to accumulator
+@c{}{} - if accumulator is c, do the first {} otherwise do the second {} (second {} optional)
+@$n{}{} - if accumulator is n, do the first {} otherwise do the second {} 
+#c - load char constant c into accumulator 
+#$n - load number constant n into accumulator
+& - halt
+
+("$$" for '$')
+
+Hello world
+#H,#e,#l,,#o,#,,# ,#W,#o,#r,#l,#d,#!,&
+
+Truth Machine
+;@1{[,]}{,&}
+
+Take 2 inputs and XOR them
+;@0{;@0{#0,}{#1,}}{;@0{#1,}{#0,}}&
+
+Cat Program
+[;@$0{&}{,}]
+
