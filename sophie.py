@@ -83,7 +83,7 @@ def runstr(code):
             else:
                 comparnum = ord(code[IP])
                 IP += 1
-            if code[IP]=="{":
+            if code[IP] == "{":
                 if comparnum == accumulator:
                     if_else_stack.append(True)
                     """else:
@@ -115,7 +115,7 @@ def runstr(code):
                 sys.exit(47)      
         elif codene == "}":
             state = if_else_stack.pop()
-            if state and code[IP+1] == "{":
+            if state and code[IP + 1] == "{":
                 IP += 2
                 bracket_count = 1
                 while bracket_count > 0:
