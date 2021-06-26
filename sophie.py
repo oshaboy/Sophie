@@ -1,6 +1,6 @@
 import sys
 def isdigit(cand):
-    return cand=="0" or cand=="1" or cand=="2" or cand=="3" or cand=="4" or cand=="5" or cand=="6" or cand=="7" or cand=="8" or cand=="9"
+    return cand=="0" or cand=="1" or cand=="2" or cand=="3" or cand=="4" or cand=="5" or cand=="6" or cand=="7" or cand=="8" or cand=="9" or cand=="-"
 
 
 def runstr(code):
@@ -42,7 +42,7 @@ def runstr(code):
                     accumulator=int(numstr)
                         
                 else:
-                    print("Not a valid Number at {}",IP)
+                    print("Not a valid Number at {}".format(IP))
                     sys.exit(47)
             else:
                 accumulator=ord(code[IP])
@@ -69,7 +69,7 @@ def runstr(code):
             except EOFError:
                 accumulator=0
         elif (codene=="."):
-            print(accumulator)
+            print(accumulator,end="")
         elif (codene=="@"):
             IP+=1
             comparnum=None

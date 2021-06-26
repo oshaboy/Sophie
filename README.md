@@ -18,7 +18,7 @@ Sophie (Hebrew for "Finite") is an esoteric programming language designed to **n
     
     ("$$" for '$')
     
-Instructions may be changed or added. Currently all number input can only be positive but that might also change. 
+Instructions may be changed or added. 
 
 ### Example Programs
 cat - repeats whatever input is given to it  
