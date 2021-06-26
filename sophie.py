@@ -43,9 +43,9 @@ def runstr(code):
                     sys.exit(47)
             else:
                 accumulator = ord(code[IP])
-        elif codene=="[":
+        elif codene == "[":
             loop_stack.append(IP + 1)
-        elif codene=="]":
+        elif codene == "]":
             IP = loop_stack[-1]
             continue
         elif codene == ";":
@@ -66,7 +66,7 @@ def runstr(code):
                 accumulator = 0
         elif codene == ".":
             print(accumulator)
-        elif codene=="@":
+        elif codene == "@":
             IP += 1
             comparnum = None
             if code[IP] == "$":
@@ -147,7 +147,7 @@ def generate_test(string):
     return code + end
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     if sys.argv[1] == "-p":
         print(generate_print(sys.argv[2]))
     elif sys.argv[1] == "-t":
