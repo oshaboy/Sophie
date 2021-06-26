@@ -18,6 +18,7 @@ Sophie (Hebrew for "Finite") is an esoteric programming language designed to **n
     
     ("$$" for '$')
     
+Brackets without a condition will never get run. This can be used for comments. 
 Instructions may be changed or added. 
 
 ### Example Programs

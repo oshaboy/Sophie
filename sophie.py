@@ -131,6 +131,16 @@ def runstr(code):
                         bracket_count+=1
                     elif (code[IP]=="}"):
                         bracket_count-=1
+        elif codene=="{": #comment
+            bracket_count=1
+            IP+=1
+            while(bracket_count>0):
+                IP+=1
+                if (code[IP]=="{"):
+                    bracket_count+=1
+                elif (code[IP]=="}"):
+                    bracket_count-=1
+            
         else: #any other char
             print("Invalid codene {}".format( codene))
             sys.exit(47)

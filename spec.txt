@@ -16,6 +16,9 @@ It's name is the Hebrew word for finite.
 & - halt
 
 ("$$" for '$')
+Brackets without a condition will never get run. This can be used for comments. 
+
+Examples:
 
 Hello world
 #H,#e,#l,,#o,#,,# ,#W,#o,#r,#l,#d,#!,&
