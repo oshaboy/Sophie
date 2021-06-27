@@ -1,6 +1,5 @@
 import sys
-def isdigit(cand):
-    return cand=="0" or cand=="1" or cand=="2" or cand=="3" or cand=="4" or cand=="5" or cand=="6" or cand=="7" or cand=="8" or cand=="9" or cand=="-"
+
 
 logfile=None
 def runstr(code):
@@ -44,10 +43,10 @@ def runstr(code):
                 if (code[IP]=="$"):
                     accumulator=ord("$") #not sure why I put this special case here. Just use $24
                 
-                elif (isdigit(code[IP])):
+                elif code[IP].isdigit():
                     #Aggregate the digits
                     numstr=""
-                    while (IP<len(code) and isdigit(code[IP])):
+                    while IP < len(code) and code[IP].isdigit():
                         numstr+=code[IP]
                         IP+=1
                     IP-=1 #This nullifies the IP+=1 at the end of the loop
@@ -109,7 +108,7 @@ def runstr(code):
                 else:
                     numstr=""
                 
-                    while (IP<len(code) and isdigit(code[IP])):
+                    while IP < len(code) and code[IP].isdigit():
                         numstr+=code[IP]
                         IP+=1
                     comparnum=int(numstr)
@@ -184,9 +183,9 @@ def runstr(code):
             print("Invalid codene {}".format( codene))
             sys.exit(47)
         IP+=1
-        
-        
+    
     return accumulator
+
 
 #Return Sophie code to print a given string
 def generate_print(string):
@@ -194,6 +193,8 @@ def generate_print(string):
     for c in string:
         code+="#"+c+","
     return code
+
+
 #Return Sophie code to check for a given string
 def generate_test(string):
     code=""
@@ -202,6 +203,8 @@ def generate_test(string):
         code+=";@"+c+"{"
         end+="}"
     return code+end
+
+
 if __name__=="__main__":
     if (sys.argv[1]=="-p"):
         print(generate_print(sys.argv[2]))
@@ -210,4 +213,3 @@ if __name__=="__main__":
     else:
         sys.exit(runstr(open(sys.argv[1]).read()))
     sys.exit(0)
-    
