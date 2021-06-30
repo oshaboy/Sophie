@@ -17,7 +17,7 @@ def runstr(code):
             
             
         elif (codene=="&"):
-            return accumulator
+            return accumulator%256
         
         
         elif (codene=="*"):
@@ -184,7 +184,7 @@ def runstr(code):
             sys.exit(47)
         IP+=1
     
-    return accumulator
+    return accumulator%256
 
 
 #Return Sophie code to print a given string
