@@ -41,7 +41,7 @@ def runstr(code):
             if (code[IP]=="$"):
                 IP+=1
                 if (code[IP]=="$"):
-                    accumulator=ord("$") #not sure why I put this special case here. Just use $24
+                    accumulator=ord("$") #not sure why I put this special case here. Just use $36
                 
                 elif code[IP].isdigit():
                     #Aggregate the digits
@@ -104,7 +104,7 @@ def runstr(code):
             if (code[IP]=="$"):
                 IP+=1
                 if (code[IP]=="$"):
-                    comparnum=ord("$")
+                    comparnum=ord("$") #not sure why I put this special case here. Just use $36
                 else:
                     numstr=""
                 
